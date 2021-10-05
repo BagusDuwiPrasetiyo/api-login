@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\api;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\DB;
 
@@ -35,6 +35,13 @@ class LoginController extends Controller
             return response()->json($resp);
         }
 
-        return true;
+        $resp = [
+            'metadata' => [
+                'code' => 200,
+                'status' => ''
+            ]
+        ];
+
+        return response()->json($resp);
     }
 }
